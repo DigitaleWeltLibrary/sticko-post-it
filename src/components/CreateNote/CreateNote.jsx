@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./CreateNote.scss";
+import colors from  "../../utils/colors";
 
 export default function CreateNote({ changeOpen, addnote }) {
   /* NOTE state for the note */
@@ -7,15 +8,6 @@ export default function CreateNote({ changeOpen, addnote }) {
     text: "",
     color: "--note-yellow",
   });
-
-  /* NOTE css var for the note colors */
-  const colors = [
-    "--note-yellow",
-    "--note-pink",
-    "--note-blue",
-    "--note-green",
-    "--note-orange",
-  ];
 
   /* NOTE add note to array and close create note */
   const addnotearr = () => {
