@@ -19,7 +19,7 @@ export default function Header({ changeOpen }) {
         </div>
 
         <div>
-          <button>
+          <button onClick={() => changeOpen()}>
             <FontAwesomeIcon icon={faPlus} />
             <span>New Note</span>
           </button>
