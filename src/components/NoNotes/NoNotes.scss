@@ -1,0 +1,66 @@
+.nonotes {
+  max-width: 600px;
+
+  div {
+    height: 80px;
+    aspect-ratio: 1/1;
+    display: grid;
+    place-items: center;
+    border-radius: var(--radius);
+    border: 2px solid hsl(var(--border));
+    margin: 0 auto 1.5rem;
+    background: hsl(330 100% 88%);
+    transition: var(--transition-smooth);
+
+    &:hover {
+      scale: 1.05;
+    }
+
+    svg {
+      color: #000;
+    }
+  }
+
+  h2 {
+    text-align: center;
+    transition: var(--transition-smooth);
+    color: hsl(var(--foreground));
+    font-size: 2rem;
+    text-wrap: balance;
+  }
+  p {
+    text-align: center;
+    text-wrap: balance;
+    transition: var(--transition-smooth);
+    color: hsl(var(--muted-foreground));
+    margin-block: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  button {
+    cursor: pointer;
+    border-radius: var(--radius);
+    background: hsl(var(--primary));
+    color: hsl(var(--background));
+    padding: 0.25rem 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    border: 2px solid hsl(var(--primary));
+    transition: var(--transition-smooth);
+    font-size: 1rem;
+    margin-inline: auto;
+
+    @media (width<= 600px) {
+      span {
+        display: none;
+      }
+    }
+
+    &:hover {
+      background: hsl(var(--primary-foreground));
+      color: hsl(var(--primary));
+      box-shadow: var(--shadow-note-hover);
+    }
+  }
+}

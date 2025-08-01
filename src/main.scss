@@ -147,6 +147,15 @@ body,
   background-color: hsl(var(--background));
   transition: 500ms all;
   position: relative;
-  width: 100%;
   min-height: 100dvh;
+
+  main {
+    display: grid;
+    height: calc(100dvh - (71px + 1rem));
+    width: calc(100dvw - 2rem);
+
+    &:has(.nonotes) {
+      place-items: center;
+    }
+  }
 }

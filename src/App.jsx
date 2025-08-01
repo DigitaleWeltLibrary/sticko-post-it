@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import CreateNote from "./components/CreateNote/CreateNote";
 import Header from "./components/Header/Header";
 import "./main.scss";
+import ShowNotes from "./components/ShowNotes/ShowNotes";
 
 function App() {
   /* NOTE state to open create new note */
@@ -21,6 +22,7 @@ function App() {
     setNotes(newnotes);
   };
 
+  /* FIXME del */
   useEffect(() => {
     console.log(notes);
   }, [notes]);
@@ -29,6 +31,7 @@ function App() {
     <>
       <Header changeOpen={changeOpen} />
       {open ? <CreateNote changeOpen={changeOpen} addnote={addnote} /> : null}
+      <ShowNotes notes={notes} changeOpen={changeOpen} />
     </>
   );
 }
