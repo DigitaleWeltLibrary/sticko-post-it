@@ -4,21 +4,31 @@ import Header from "./components/Header/Header";
 import "./main.scss";
 
 function App() {
-  /* FIXME state to open create new note */
-  const [open, setOpen] = useState(true);
+  /* NOTE state to open create new note */
+  const [open, setOpen] = useState(false);
   /* NOTE change visibility of open create */
   const changeOpen = () => {
     setOpen((prev) => !prev);
   };
 
+  /* NOTE State to manage notes */
+  const [notes, setNotes] = useState([]);
+
+  /* NOTE Add Note  */
+  const addnote = (obj) => {
+    let newnotes = [...notes];
+    newnotes.push(obj);
+    setNotes(newnotes);
+  };
+
   useEffect(() => {
-    console.log(open);
-  }, [open]);
+    console.log(notes);
+  }, [notes]);
 
   return (
     <>
       <Header changeOpen={changeOpen} />
-      {open ? <CreateNote /> : null}
+      {open ? <CreateNote changeOpen={changeOpen} addnote={addnote} /> : null}
     </>
   );
 }

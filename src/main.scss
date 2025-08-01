@@ -142,7 +142,11 @@ body.dark {
   --sidebar-ring: 217.2 91.2% 59.8%;
 }
 
-body {
+body,
+#root {
   background-color: hsl(var(--background));
   transition: 500ms all;
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
 }
