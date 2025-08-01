@@ -19,6 +19,7 @@ export default function ThemeToggle({ newtheme, theme }) {
       icon={theme == "dark" ? faMoon : faSun}
       size="xl"
       onClick={() => newtheme(theme)}
+      className="toggle"
     />
   );
 }

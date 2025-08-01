@@ -3,6 +3,7 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
+import "./Header.scss";
 
 export default function Header() {
   /* NOTE state to manage theme */
@@ -14,14 +15,25 @@ export default function Header() {
 
   return (
     <header>
-      <FontAwesomeIcon icon={faNoteSticky} />
-      <h1>Sticko</h1>
+      <section>
+        <div>
+          <FontAwesomeIcon
+            icon={faNoteSticky}
+            size="xl"
+            className="note"
+            color="hsl(330 100% 88%)"
+          />
+          <h1>Sticko</h1>
+        </div>
 
-      <button>
-        <FontAwesomeIcon icon={faPlus} />
-        <span>New Note</span>
-      </button>
-      <ThemeToggle newtheme={newtheme} theme={theme} />
+        <div>
+          <button>
+            <FontAwesomeIcon icon={faPlus} />
+            <span>New Note</span>
+          </button>
+          <ThemeToggle newtheme={newtheme} theme={theme} />
+        </div>
+      </section>
     </header>
   );
 }

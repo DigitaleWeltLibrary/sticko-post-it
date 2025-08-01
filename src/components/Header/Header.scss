@@ -1,0 +1,68 @@
+header {
+  background: hsl(var(--sidebar-background));
+  border: 1px solid hsl(var(--sidebar-border));
+  margin-bottom: 1rem;
+
+  section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    div {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+
+      h1 {
+        transition: var(--transition-smooth);
+        color: hsl(var(--foreground));
+        font-size: 2rem;
+        font-weight: 600;
+      }
+
+      svg {
+        transition: var(--transition-smooth);
+        &.toggle {
+          transition: 500ms all;
+          cursor: pointer;
+          color: hsl(var(--foreground));
+
+          &:hover {
+            border-radius: var(--radius);
+            background: hsl(var(--shadow-note));
+            box-shadow: var(--shadow-note);
+          }
+        }
+      }
+
+      button {
+        cursor: pointer;
+        border-radius: var(--radius);
+        background: hsl(var(--primary));
+        color: hsl(var(--background));
+        padding: 0.25rem 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        border: 2px solid hsl(var(--primary));
+        transition: var(--transition-smooth);
+        font-size: 1rem;
+
+        @media (width<= 600px) {
+          span {
+            display: none;
+          }
+        }
+
+        &:hover {
+          background: hsl(var(--primary-foreground));
+          color: hsl(var(--primary));
+          box-shadow: var(--shadow-note-hover);
+        }
+      }
+    }
+  }
+}
