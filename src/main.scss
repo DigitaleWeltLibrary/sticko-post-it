@@ -3,3 +3,146 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+:root {
+  /* Base colors */
+  --background: 45 15% 96%;
+  --foreground: 220 9% 15%;
+
+  /* Card colors */
+  --card: 0 0% 100%;
+  --card-foreground: 220 9% 15%;
+
+  /* Popover colors */
+  --popover: 0 0% 100%;
+  --popover-foreground: 220 9% 15%;
+
+  /* Primary brand colors */
+  --primary: 220 9% 15%;
+  --primary-foreground: 45 15% 96%;
+
+  /* Secondary colors */
+  --secondary: 45 15% 92%;
+  --secondary-foreground: 220 9% 15%;
+
+  /* Muted colors */
+  --muted: 45 10% 88%;
+  --muted-foreground: 220 5% 45%;
+
+  /* Accent colors */
+  --accent: 45 15% 92%;
+  --accent-foreground: 220 9% 15%;
+
+  /* Destructive colors */
+  --destructive: 0 75% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  /* Border and input colors */
+  --border: 45 10% 85%;
+  --input: 45 10% 85%;
+  --ring: 220 9% 15%;
+
+  /* Sticky note colors */
+  --note-yellow: 51 100% 85%;
+  --note-yellow-foreground: 51 50% 25%;
+  --note-pink: 330 100% 88%;
+  --note-pink-foreground: 330 50% 25%;
+  --note-blue: 210 100% 88%;
+  --note-blue-foreground: 210 50% 25%;
+  --note-green: 120 60% 85%;
+  --note-green-foreground: 120 50% 25%;
+  --note-orange: 25 100% 85%;
+  --note-orange-foreground: 25 50% 25%;
+
+  /* Shadows and effects */
+  --shadow-note: 0 4px 12px -2px hsl(220 20% 20% / 0.15);
+  --shadow-note-hover: 0 8px 20px -4px hsl(220 20% 20% / 0.25);
+  --shadow-floating: 0 10px 30px -8px hsl(220 20% 20% / 0.3);
+
+  /* Transitions */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  --radius: 0.5rem;
+
+  /* Sidebar */
+  --sidebar-background: 0 0% 98%;
+  --sidebar-foreground: 240 5.3% 26.1%;
+  --sidebar-primary: 240 5.9% 10%;
+  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-accent: 240 4.8% 95.9%;
+  --sidebar-accent-foreground: 240 5.9% 10%;
+  --sidebar-border: 220 13% 91%;
+  --sidebar-ring: 217.2 91.2% 59.8%;
+}
+
+body.dark {
+  /* Dark mode base colors */
+  --background: 220 15% 8%;
+  --foreground: 45 15% 92%;
+
+  /* Dark mode card colors */
+  --card: 220 15% 12%;
+  --card-foreground: 45 15% 92%;
+
+  /* Dark mode popover colors */
+  --popover: 220 15% 12%;
+  --popover-foreground: 45 15% 92%;
+
+  /* Dark mode primary colors */
+  --primary: 45 15% 92%;
+  --primary-foreground: 220 15% 8%;
+
+  /* Dark mode secondary colors */
+  --secondary: 220 15% 16%;
+  --secondary-foreground: 45 15% 92%;
+
+  /* Dark mode muted colors */
+  --muted: 220 10% 20%;
+  --muted-foreground: 45 8% 65%;
+
+  /* Dark mode accent colors */
+  --accent: 220 15% 16%;
+  --accent-foreground: 45 15% 92%;
+
+  /* Dark mode destructive colors */
+  --destructive: 0 70% 55%;
+  --destructive-foreground: 0 0% 100%;
+
+  /* Dark mode borders and inputs */
+  --border: 220 10% 25%;
+  --input: 220 10% 25%;
+  --ring: 45 15% 92%;
+
+  /* Dark mode sticky note colors - slightly muted for dark theme */
+  --note-yellow: 51 80% 70%;
+  --note-yellow-foreground: 51 60% 15%;
+  --note-pink: 330 80% 75%;
+  --note-pink-foreground: 330 60% 15%;
+  --note-blue: 210 80% 75%;
+  --note-blue-foreground: 210 60% 15%;
+  --note-green: 120 50% 70%;
+  --note-green-foreground: 120 60% 15%;
+  --note-orange: 25 80% 70%;
+  --note-orange-foreground: 25 60% 15%;
+
+  /* Dark mode shadows */
+  --shadow-note: 0 4px 12px -2px hsl(220 40% 5% / 0.4);
+  --shadow-note-hover: 0 8px 20px -4px hsl(220 40% 5% / 0.6);
+  --shadow-floating: 0 10px 30px -8px hsl(220 40% 5% / 0.7);
+
+  /* Dark mode sidebar */
+  --sidebar-background: 240 5.9% 10%;
+  --sidebar-foreground: 240 4.8% 95.9%;
+  --sidebar-primary: 224.3 76.3% 48%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 240 3.7% 15.9%;
+  --sidebar-accent-foreground: 240 4.8% 95.9%;
+  --sidebar-border: 240 3.7% 15.9%;
+  --sidebar-ring: 217.2 91.2% 59.8%;
+}
+
+body {
+  background-color: hsl(var(--background));
+  transition: 500ms all;
+}
