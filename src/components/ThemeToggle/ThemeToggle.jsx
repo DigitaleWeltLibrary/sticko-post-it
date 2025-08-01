@@ -6,6 +6,12 @@ export default function ThemeToggle({ newtheme, theme }) {
   /* NOTE change theme in localStorage */
   useEffect(() => {
     localStorage.setItem("sticko-theme", theme);
+
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
   }, [theme]);
 
   return (
