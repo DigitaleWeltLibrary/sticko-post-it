@@ -56,3 +56,4 @@ Hovering over a note gives you the option to edit the Post-it.
 ## Versions
 
 - v1.0.0: Full functionality with UI
+- v2.0.0: bug fixes and SEO / Fonts
