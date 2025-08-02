@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./CreateNote.scss";
 import colors from "../../utils/colors";
 
@@ -16,6 +16,16 @@ export default function CreateNote({
       color: "--note-yellow",
     }
   );
+
+  /* NOTE create a useref for input */
+  const userinputRef = useRef(null);
+
+  /* NOTE focus on input at the beginning */
+  useEffect(() => {
+    if (userinputRef.current) {
+      userinputRef.current.focus();
+    }
+  }, []);
 
   /* NOTE Add Note  */
   const addNoteToArray = () => {
@@ -46,6 +56,7 @@ export default function CreateNote({
           onChange={(e) =>
             setNote((prev) => ({ ...prev, text: e.target.value }))
           }
+          ref={userinputRef}
         />
         <p className="length">{note.text.length}/200 characters</p>
         <h2>Color</h2>
