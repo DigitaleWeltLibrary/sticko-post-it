@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import CreateNote from "./components/CreateNote/CreateNote";
 import Header from "./components/Header/Header";
 import "./main.scss";
+import "./fonts.scss";
 import ShowNotes from "./components/ShowNotes/ShowNotes";
 
 function App() {

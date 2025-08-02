@@ -148,6 +148,16 @@ body,
   transition: 500ms all;
   position: relative;
   min-height: 100dvh;
+  font-family: "roboto", sans-serif;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "itim";
+  }
 
   main {
     display: flex;
@@ -162,7 +172,7 @@ body,
 
     &:not(&:has(.nonotes)) {
       flex-wrap: wrap;
-      justify-content:baseline;
+      justify-content: baseline;
       gap: 1rem;
       grid-row: 192px;
     }
