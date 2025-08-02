@@ -2,6 +2,15 @@ header {
   background: hsl(var(--sidebar-background));
   border: 1px solid hsl(var(--sidebar-border));
   margin-bottom: 1rem;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 50;
+  --tw-shadow: var(--shadow-note-hover);
+  --tw-shadow-colored: var(--shadow-note-hover);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)),
+    var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-shadow);
 
   section {
     display: flex;

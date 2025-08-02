@@ -163,6 +163,8 @@ body,
     display: flex;
     width: calc(100dvw - 2rem);
     margin-inline: auto;
+    margin-top: 4.5rem;
+    padding: 1rem;
 
     &:has(.nonotes) {
       height: calc(100dvh - (71px + 1rem));
