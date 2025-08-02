@@ -7,6 +7,7 @@ export default function ShowNotes({
   setnewnotes,
   setEditID,
 }) {
+  /* NOTE amount of notes */
   const length = notes.length;
 
   return (

@@ -8,15 +8,14 @@ import ShowNotes from "./components/ShowNotes/ShowNotes";
 function App() {
   /* NOTE state to open create new note */
   const [open, setOpen] = useState(false);
-  /* NOTE change visibility of open create */
-  const changeOpen = () => {
-    setOpen((prev) => !prev);
-  };
 
   /* NOTE State to manage notes */
   const [notes, setNotes] = useState(
     () => JSON.parse(localStorage.getItem("sticko-notes")) || []
   );
+
+  /* NOTE get index of note that you want to edit */
+  const [editID, setEditID] = useState(null);
 
   /* NOTE Save notes to localStorage */
   useEffect(() => {
@@ -24,18 +23,20 @@ function App() {
     localStorage.setItem("sticko-notes", notesJSON);
   }, [notes]);
 
-  /* NOTE set new notes array */
-  const setnewnotes = (notesarr) => setNotes(notesarr);
-
-  /* NOTE get index of note that you want to edit */
-  const [editID, setEditID] = useState(null);
-
   /* NOTE useeffect for opening dialog to edit notes */
   useEffect(() => {
     if (editID !== null) {
       setOpen(true);
     }
   }, [editID]);
+
+  /* NOTE change visibility of open create */
+  const changeOpen = () => {
+    setOpen((prev) => !prev);
+  };
+
+  /* NOTE set new notes array */
+  const setnewnotes = (notesarr) => setNotes(notesarr);
 
   return (
     <>

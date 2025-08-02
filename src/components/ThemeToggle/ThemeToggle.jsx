@@ -7,8 +7,6 @@ export default function ThemeToggle() {
   const [theme, settheme] = useState(
     () => localStorage.getItem("sticko-theme") || "light"
   );
-  /* NOTE function for changing the theme */
-  const newtheme = (theme) => settheme(theme === "light" ? "dark" : "light");
 
   /* NOTE change theme in localStorage */
   useEffect(() => {
@@ -20,6 +18,9 @@ export default function ThemeToggle() {
       document.body.classList.remove("dark");
     }
   }, [theme]);
+
+  /* NOTE function for changing the theme */
+  const newtheme = (theme) => settheme(theme === "light" ? "dark" : "light");
 
   return (
     <FontAwesomeIcon

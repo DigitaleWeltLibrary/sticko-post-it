@@ -3,6 +3,9 @@ import CardSettings from "../CardSettings/CardSettings";
 import { useState } from "react";
 
 export default function NotesList({ notes, setnewnotes, setEditID }) {
+  /* NOTE index of the hovered note */
+  const [hoveredNoteIndex, setHoveredNoteIndex] = useState(null);
+
   /* NOTE del index */
   const delindex = (index) => {
     let newnotes = [...notes];
@@ -18,8 +21,6 @@ export default function NotesList({ notes, setnewnotes, setEditID }) {
 
     setnewnotes(updatedNotes);
   };
-
-  const [hoveredNoteIndex, setHoveredNoteIndex] = useState(null);
 
   return (
     <>
