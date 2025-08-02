@@ -150,12 +150,21 @@ body,
   min-height: 100dvh;
 
   main {
-    display: grid;
-    height: calc(100dvh - (71px + 1rem));
+    display: flex;
     width: calc(100dvw - 2rem);
+    margin-inline: auto;
 
     &:has(.nonotes) {
-      place-items: center;
+      height: calc(100dvh - (71px + 1rem));
+      align-items: center;
+      justify-content: center;
+    }
+
+    &:not(&:has(.nonotes)) {
+      flex-wrap: wrap;
+      justify-content:baseline;
+      gap: 1rem;
+      grid-row: 192px;
     }
   }
 }

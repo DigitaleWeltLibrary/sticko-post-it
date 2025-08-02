@@ -22,6 +22,13 @@ function App() {
     setNotes(newnotes);
   };
 
+  /* NOTE del index */
+  const delindex = (index) => {
+    let newnotes = [...notes];
+    newnotes.splice(index, 1);
+    setNotes(newnotes);
+  };
+
   /* FIXME del */
   useEffect(() => {
     console.log(notes);
@@ -31,7 +38,7 @@ function App() {
     <>
       <Header changeOpen={changeOpen} />
       {open ? <CreateNote changeOpen={changeOpen} addnote={addnote} /> : null}
-      <ShowNotes notes={notes} changeOpen={changeOpen} />
+      <ShowNotes notes={notes} changeOpen={changeOpen} delindex={delindex} />
     </>
   );
 }

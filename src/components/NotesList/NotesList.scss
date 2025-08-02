@@ -1,0 +1,51 @@
+.card {
+  border: var(--border) 2px solid;
+  border-radius: var(--radius);
+  width: 250px;
+  height: 250px;
+  transition: var(--transition-smooth);
+  padding: 1rem 1.5rem 1.5rem;
+
+  div {
+    height: 20px;
+    right: 10px;
+    top: 10px;
+    width: 45%;
+    justify-content: space-evenly;
+    margin-left: auto;
+    display: flex;
+    opacity: 0;
+    transition: var(--transition-smooth);
+    pointer-events: none;
+
+    svg {
+      color: var(--color);
+      opacity: 0.75;
+      transition: var(--transition-smooth);
+      cursor: pointer;
+
+      &:hover {
+        opacity: 1;
+        scale: 1.1;
+      }
+    }
+  }
+  &:hover {
+    --tw-shadow: var(--shadow-note-hover);
+    --tw-shadow-colored: var(--shadow-note-hover);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    translate: 0 -4px;
+    div {
+      pointer-events: auto;
+      opacity: 0.9;
+    }
+  }
+
+  p {
+    text-wrap: pretty;
+    word-break: break-all;
+    line-break: auto;
+    font-size: 1.1rem;
+  }
+}

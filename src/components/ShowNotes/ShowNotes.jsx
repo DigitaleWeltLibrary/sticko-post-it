@@ -1,7 +1,7 @@
 import NoNotes from "../NoNotes/NoNotes";
 import NotesList from "../NotesList/NotesList";
 
-export default function ShowNotes({ notes, changeOpen }) {
+export default function ShowNotes({ notes, changeOpen, delindex }) {
   const length = notes.length;
 
   return (
@@ -9,7 +9,7 @@ export default function ShowNotes({ notes, changeOpen }) {
       {length == 0 ? (
         <NoNotes changeOpen={changeOpen} />
       ) : (
-        <NotesList notes={notes} />
+        <NotesList notes={notes} delindex={delindex} />
       )}
     </main>
   );
