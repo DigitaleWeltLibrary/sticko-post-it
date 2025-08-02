@@ -1,38 +1,44 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./NotesList.scss";
-import { faPalette, faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
+import CardSettings from "../CardSettings/CardSettings";
+import { useState } from "react";
 
-export default function NotesList({ notes, delindex }) {
+export default function NotesList({ notes, setnewnotes }) {
+  /* NOTE del index */
+  const delindex = (index) => {
+    let newnotes = [...notes];
+    newnotes.splice(index, 1);
+    setnewnotes(newnotes);
+  };
+
+  /* NOTE change color of the note */
+  const changeColor = (noteIndex, newColor) => {
+    const updatedNotes = notes.map((note, i) =>
+      i === noteIndex ? { ...note, color: newColor } : note
+    );
+
+    setnewnotes(updatedNotes);
+  };
+
+  const [hoveredNoteIndex, setHoveredNoteIndex] = useState(null);
+
   return (
     <>
-      {notes.map(({ text, color }, index) => (
+      {notes.map(({ text, color }, noteIndex) => (
         <div
           className="card"
-          key={index}
+          key={`cards-${noteIndex}`}
           style={{ backgroundColor: `hsl(var(${color}))` }}
+          onMouseEnter={() => setHoveredNoteIndex(noteIndex)}
+          onMouseLeave={() => setHoveredNoteIndex(null)}
         >
-          <div>
-            <FontAwesomeIcon
-              icon={faPen}
-              style={{
-                "--color": "#000",
-              }}
-            />
-            <FontAwesomeIcon
-              icon={faPalette}
-              style={{
-                "--color": "#000",
-              }}
-            />
-            <FontAwesomeIcon
-              icon={faTrash}
-              style={{
-                "--color": "#ff1e00",
-              }}
-              onClick={() => delindex(index)}
-            />
-          </div>
-          <p>{text}</p>
+          <CardSettings
+            delindex={delindex}
+            changeColor={changeColor}
+            noteIndex={noteIndex}
+            color={color}
+            isHovered={hoveredNoteIndex === noteIndex}
+          />
+          <p key={`text-${noteIndex}`}>{text}</p>
         </div>
       ))}
     </>
