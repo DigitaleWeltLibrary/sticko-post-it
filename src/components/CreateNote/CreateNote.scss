@@ -8,6 +8,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: min(calc(100dvw - 4rem), 550px);
+  z-index: 99;
 
   h2 {
     transition: var(--transition-smooth);
