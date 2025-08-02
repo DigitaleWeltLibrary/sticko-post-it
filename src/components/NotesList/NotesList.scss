@@ -1,8 +1,8 @@
 .card {
   border: var(--border) 2px solid;
   border-radius: var(--radius);
-  width: 250px;
-  height: 250px;
+  width: 100%;
+  aspect-ratio: 1;
   transition: var(--transition-smooth);
   padding: 1rem 1.5rem 1.5rem;
 
