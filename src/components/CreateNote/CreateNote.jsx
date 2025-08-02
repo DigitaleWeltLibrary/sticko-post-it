@@ -1,23 +1,42 @@
 import { useState } from "react";
 import "./CreateNote.scss";
-import colors from  "../../utils/colors";
+import colors from "../../utils/colors";
 
-export default function CreateNote({ changeOpen, addnote }) {
+export default function CreateNote({
+  changeOpen,
+  notes,
+  setnewnotes,
+  editID,
+  setEditID,
+}) {
   /* NOTE state for the note */
-  const [note, setNote] = useState({
-    text: "",
-    color: "--note-yellow",
-  });
+  const [note, setNote] = useState(
+    notes[editID] || {
+      text: "",
+      color: "--note-yellow",
+    }
+  );
 
-  /* NOTE add note to array and close create note */
-  const addnotearr = () => {
-    addnote(note);
+  /* NOTE Add Note  */
+  const addNoteToArray = () => {
+    let newnotes = [...notes];
+    newnotes.push(note);
+    setnewnotes(newnotes);
     changeOpen();
+  };
+
+  /* NOTE edit Note */
+  const editnote = () => {
+    let newnotes = [...notes];
+    newnotes[editID] = note;
+    setnewnotes(newnotes);
+    changeOpen();
+    setEditID(null);
   };
 
   return (
     <article className="createnote">
-      <h2>Create New Note</h2>
+      <h2>{editID != null ? "Create New Note" : "Edit your Note"}</h2>
       <p>Write your thoughts and choose a color for your new sticky note.</p>
       <textarea
         placeholder="Type your note here"
@@ -50,8 +69,11 @@ export default function CreateNote({ changeOpen, addnote }) {
 
       <div className="btn">
         <button onClick={() => changeOpen()}>Cancel</button>
-        <button disabled={!note.text} onClick={addnotearr}>
-          Create Note
+        <button
+          disabled={!note.text}
+          onClick={editID != null ? editnote : addNoteToArray}
+        >
+          {editID != null ? "Edit" : "Create Note"}
         </button>
       </div>
     </article>

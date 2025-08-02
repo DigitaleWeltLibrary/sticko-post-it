@@ -1,7 +1,12 @@
 import NoNotes from "../NoNotes/NoNotes";
 import NotesList from "../NotesList/NotesList";
 
-export default function ShowNotes({ notes, changeOpen, setnewnotes }) {
+export default function ShowNotes({
+  notes,
+  changeOpen,
+  setnewnotes,
+  setEditID,
+}) {
   const length = notes.length;
 
   return (
@@ -9,7 +14,11 @@ export default function ShowNotes({ notes, changeOpen, setnewnotes }) {
       {length == 0 ? (
         <NoNotes changeOpen={changeOpen} />
       ) : (
-        <NotesList notes={notes} setnewnotes={setnewnotes} />
+        <NotesList
+          notes={notes}
+          setnewnotes={setnewnotes}
+          setEditID={setEditID}
+        />
       )}
     </main>
   );

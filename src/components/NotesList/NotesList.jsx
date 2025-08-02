@@ -2,7 +2,7 @@ import "./NotesList.scss";
 import CardSettings from "../CardSettings/CardSettings";
 import { useState } from "react";
 
-export default function NotesList({ notes, setnewnotes }) {
+export default function NotesList({ notes, setnewnotes, setEditID }) {
   /* NOTE del index */
   const delindex = (index) => {
     let newnotes = [...notes];
@@ -37,6 +37,7 @@ export default function NotesList({ notes, setnewnotes }) {
             noteIndex={noteIndex}
             color={color}
             isHovered={hoveredNoteIndex === noteIndex}
+            setEditID={setEditID}
           />
           <p key={`text-${noteIndex}`}>{text}</p>
         </div>

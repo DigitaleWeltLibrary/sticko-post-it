@@ -15,29 +15,36 @@ function App() {
   /* NOTE State to manage notes */
   const [notes, setNotes] = useState([]);
 
-  /* NOTE Add Note  */
-  const addnote = (obj) => {
-    let newnotes = [...notes];
-    newnotes.push(obj);
-    setNotes(newnotes);
-  };
-
   /* NOTE set new notes array */
   const setnewnotes = (notesarr) => setNotes(notesarr);
 
-  /* FIXME del */
+  /* NOTE get index of note that you want to edit */
+  const [editID, setEditID] = useState(null);
+
+  /* NOTE useeffect for opening dialog to edit notes */
   useEffect(() => {
-    console.log(notes);
-  }, [notes]);
+    if (editID !== null) {
+      setOpen(true);
+    }
+  }, [editID]);
 
   return (
     <>
       <Header changeOpen={changeOpen} />
-      {open ? <CreateNote changeOpen={changeOpen} addnote={addnote} /> : null}
+      {open ? (
+        <CreateNote
+          changeOpen={changeOpen}
+          notes={notes}
+          setnewnotes={setnewnotes}
+          editID={editID}
+          setEditID={setEditID}
+        />
+      ) : null}
       <ShowNotes
         notes={notes}
         changeOpen={changeOpen}
         setnewnotes={setnewnotes}
+        setEditID={setEditID}
       />
     </>
   );

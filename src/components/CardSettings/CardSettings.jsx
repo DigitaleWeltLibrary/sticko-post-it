@@ -9,6 +9,7 @@ export default function CardSettings({
   noteIndex,
   color,
   isHovered,
+  setEditID,
 }) {
   const [showcolors, changeShowColors] = useState(false);
 
@@ -26,6 +27,7 @@ export default function CardSettings({
         style={{
           "--color": "#000",
         }}
+        onClick={() => setEditID(noteIndex)}
       />
       <FontAwesomeIcon
         icon={faPalette}
