@@ -13,7 +13,15 @@ function App() {
   };
 
   /* NOTE State to manage notes */
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState(
+    () => JSON.parse(localStorage.getItem("sticko-notes")) || []
+  );
+
+  /* NOTE Save notes to localStorage */
+  useEffect(() => {
+    const notesJSON = JSON.stringify(notes);
+    localStorage.setItem("sticko-notes", notesJSON);
+  }, [notes]);
 
   /* NOTE set new notes array */
   const setnewnotes = (notesarr) => setNotes(notesarr);
