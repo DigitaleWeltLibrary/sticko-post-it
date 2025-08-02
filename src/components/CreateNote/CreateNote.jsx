@@ -37,7 +37,7 @@ export default function CreateNote({
   return (
     <article>
       <article className="createnote">
-        <h2>{editID != null ? "Create New Note" : "Edit your Note"}</h2>
+        <h2>{editID != null ? "Edit your Note" : "Create New Note"}</h2>
         <p>Write your thoughts and choose a color for your new sticky note.</p>
         <textarea
           placeholder="Type your note here"
